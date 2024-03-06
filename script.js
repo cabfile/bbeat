@@ -57,7 +57,6 @@ function compile(stopped=false) {
 
 function draw() {
 	var canvasCtx = document.getElementById('canvas').getContext("2d");
-	//canvasCtx.clearRect(0, 0, 1024, 256);
 	analyzer.getByteTimeDomainData(dataArray);
 	requestAnimationFrame(draw);
 	canvasCtx.fillStyle = "black";
