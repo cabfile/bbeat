@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bytebeat Composer/Editor</title>
+<style>
+	body {
+		font-family: Arial, sans-serif;
+		display: flex;
+		height: 100vh;
+		overflow: hidden;
+	}
+	#editor {
+		flex-grow: 1;
+		border: none;
+		resize: none;
+		font-size: 1em;
+	}
+	#editor-container {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}
+	#controls-panel {
+		display: flex;
+		justify-content: center;
+		padding: 4px;
+		background-color: #f2f2f2;
+		border-top: 1px solid #ccc;
+	}
+	#bytebeat-canvas {
+		width: 1024px;
+		height: 256px;
+		border: 1px solid #000;
+	}
+	#bytebeat-library {
+		width: 100vw;
+		background-color: #e6e6e6;
+		border-left: 1px solid #ccc;
+		overflow-y: auto;
+	}
+	.d {
+		border-left: 1px solid black;
+	}
+	button {
+		aspect-ratio: 1/1;
+		width: 2.5em;
+	}
+	input {
+		width: 6em;
+	}
+</style>
+</head>
+<body>
+<div id="editor-container">
+	<div id="editor">t&amp;t&gt;&gt;8</div>
+	<div id="controls-panel">
+		<button>s</button><input id="time" type="text" readonly value="0"/>
+		&nbsp;<span class="d"></span>&nbsp;
+		<!--<button id="btn-rewind">⏮️</button>-->
+		<button id="btn-stop">⏹️</button>
+		<button id="btn-play">▶️</button>
+		&nbsp;<span class="d"></span>&nbsp;
+		<!--<select id="display">
+		<option>Points</option>
+		<option>Waveform</option>
+		</select>-->
+		<select id="type">
+		<option>Bytebeat</option>
+		<option>Signed</option>
+		<option>Floatbeat</option>
+		</select>
+		<input id="sampleRate" type="number" value="8000"/>
+		<select id="sampleRates" style="width:1.5em;">
+			<option>8000</option>
+			<option>11025</option>
+			<option>16000</option>
+			<option>22050</option>
+			<option>32000</option>
+			<option>44100</option>
+			<option>48000</option>
+			<option>64000</option>
+		</select>
+		&nbsp;<span class="d"></span>&nbsp;
+		<span id="size" style="font-family:monospace;font-size:2em;">6c</span>
+		<!--&nbsp;<span class="d"></span>&nbsp;
+		<span id="error" style="font-family:monospace;font-size:2em;">no errors</span>-->
+	</div>
+	<canvas style="cursor:pointer;" id="canvas" width="1024" height="256"></canvas>
+</div>
+<div id="bytebeat-library">
+	<h1>About Bytebeat</h1>
+	<p>Bytebeat is a genre of algorithmic music. You write short (or long) formulas (or expressions) and music comes out. It was invented in like 2011 or something idk <a href="http://canonical.org/~kragen/bytebeat/">visit this page</a></p>
+	<p>Bytebeat has a range from 0 to 255, Signed has a range from -128 to 127, and Floatbeat from -1 to 1.</p>
+	<p>Here you can write and listen to expressions. Still a work in progress, though.</p>
+	<p>Created by .cab file</p>
+	<hr>
+	<h1>Some expressions you can try:</h1>
+	<ul>
+	<li><a href="#" onclick="loadExp(0)">the 42 melody</a></li>
+	<li><a href="#" onclick="loadExp(1)">a quite complex one using conditionals by Paralax</a></li>
+	<li><a href="#" onclick="loadExp(2)">chaotic craziness by T_yknow</a></li>
+	<li><a href="#" onclick="loadExp(3)">300b Information Theory by ryg, las, decipher, p01, mu6k</a></li>
+	<li><a href="#" onclick="loadExp(4)">Now this actually sounds pretty cool by Gabriel Miceli</a></li>
+	<li><a href="#" onclick="loadExp(5)">tribeat by .cab file, chasyxx and someone else i forgot</a></li>
+	<li><a href="#" onclick="loadExp(6)">test.mid by .cab file</a></li>
+	<li><a href="#" onclick="loadExp(7)">atari thingy remix v2 by .cab file and Decent-Manager</a></li>
+	</ul>
+</div>
+
+<script src="ace.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
