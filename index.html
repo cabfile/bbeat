@@ -56,7 +56,7 @@
 <div id="editor-container">
 	<div id="editor">t&amp;t&gt;&gt;8</div>
 	<div id="controls-panel">
-		<button>s</button><input id="time" type="text" readonly value="0"/>
+		<button>s</button><input title="Time in seconds. Somewhat inaccurate" id="time" type="text" readonly value="0"/>
 		&nbsp;<span class="d"></span>&nbsp;
 		<!--<button id="btn-rewind">⏮️</button>-->
 		<button id="btn-stop">⏹️</button>
@@ -66,12 +66,12 @@
 		<option>Points</option>
 		<option>Waveform</option>
 		</select>-->
-		<select id="type">
+		<select title="How the returned value should be treated" id="type">
 		<option>Bytebeat</option>
 		<option>Signed</option>
 		<option>Floatbeat</option>
 		</select>
-		<input id="sampleRate" type="number" value="8000"/>
+		<input title="Sample rate" id="sampleRate" type="number" value="8000"/>
 		<select id="sampleRates" style="width:1.5em;">
 			<option>8000</option>
 			<option>11025</option>
@@ -81,6 +81,12 @@
 			<option>44100</option>
 			<option>48000</option>
 			<option>64000</option>
+		</select>
+		&nbsp;<span class="d"></span>&nbsp;
+		<select title="How crisp should the expression sound. Note: Upscale is somewhat buggy" id="sampling">
+			<option>Point</option>
+			<!--<option>Linear (🤮)</option>-->
+			<option>Upscale</option>
 		</select>
 		&nbsp;<span class="d"></span>&nbsp;
 		<span id="size" style="font-family:monospace;font-size:2em;">6c</span>

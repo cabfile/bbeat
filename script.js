@@ -47,7 +47,8 @@ function compile(stopped=false) {
 				audioContextSR: audioContext.sampleRate,
 				sampleRate: document.getElementById('sampleRate').value,
 				type: document.getElementById('type').selectedIndex,
-				startFrom: stopped?0:Math.floor(audioContext.currentTime*document.getElementById('sampleRate').value)
+				startFrom: stopped?0:Math.floor(audioContext.currentTime*document.getElementById('sampleRate').value),
+				sampling: document.getElementById('sampling').selectedIndex
 			}
 		}
 	);
@@ -133,5 +134,8 @@ document.getElementById('sampleRates').onchange = function() {
 	if(audioContext) compile();
 };
 document.getElementById('type').onchange = function() {
+	if(audioContext) compile();
+};
+document.getElementById('sampling').onchange = function() {
 	if(audioContext) compile();
 };
