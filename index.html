@@ -22,19 +22,19 @@
 		display: flex;
 		flex-direction: column;
 	}
-	#controls-panel {
+	#controls {
 		display: flex;
 		justify-content: center;
 		padding: 4px;
 		background-color: #f2f2f2;
 		border-top: 1px solid #ccc;
 	}
-	#bytebeat-canvas {
+	#canvas {
 		width: 1024px;
 		height: 256px;
 		border: 1px solid #000;
 	}
-	#bytebeat-library {
+	#library {
 		width: 100vw;
 		background-color: #e6e6e6;
 		border-left: 1px solid #ccc;
@@ -55,7 +55,7 @@
 <body>
 <div id="editor-container">
 	<div id="editor">t&amp;t&gt;&gt;8</div>
-	<div id="controls-panel">
+	<div id="controls">
 		<button>s</button><input title="Time in seconds. Somewhat inaccurate" id="time" type="text" readonly value="0"/>
 		&nbsp;<span class="d"></span>&nbsp;
 		<!--<button id="btn-rewind">⏮️</button>-->
@@ -95,7 +95,7 @@
 	</div>
 	<canvas style="cursor:pointer;" id="canvas" width="1024" height="256"></canvas>
 </div>
-<div id="bytebeat-library">
+<div id="library">
 	<h1>About Bytebeat</h1>
 	<p>Bytebeat is a genre of algorithmic music. You write short (or long) formulas (or expressions) and music comes out. It was invented in like 2011 or something idk <a href="http://canonical.org/~kragen/bytebeat/">visit this page</a></p>
 	<p>Bytebeat has a range from 0 to 255, Signed has a range from -128 to 127, and Floatbeat from -1 to 1.</p>
